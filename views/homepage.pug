@@ -1,0 +1,21 @@
+extends ./layout.pug
+block content
+        div#carouselExampleIndicators.carousel.slide(data-ride='carousel')
+            
+            div.carousel-inner
+                .carousel-item.active
+                    img.d-block.w-100(src='/pexels-oziel-gómez-837274.jpg' alt='First slide')
+                //- .carousel-item
+                //-     img.d-block.w-100(src='/pexels-oziel-gómez-1755383.jpg' alt='Second slide')
+                //- .carousel-item
+                //-     img.d-block.w-100(src='/pexels-pixabay-460680.jpg' alt='Third slide')
+            a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+                span.carousel-control-prev-icon(aria-hidden='true')
+                span.visually-hidden Previous
+            a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+                span.carousel-control-next-icon(aria-hidden='true')
+                span.visually-hidden Next
+            .carousel-indicators
+                li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
+                li(data-target='#carouselExampleIndicators' data-slide-to='1')
+                li(data-target='#carouselExampleIndicators' data-slide-to='2')

@@ -1,0 +1,14 @@
+extends ./layout.pug
+block content
+    .card.p-5.w-50.m-auto
+            div.card-body
+                form(method="POST" action="/login")
+                    div(class="form-group")
+                        label(for="exampleInputUsername") Username 
+                        input(type="username" class="form-control" id="exampleInputUsername" name="Username" placeholder="Enter Username")
+                    
+                    div(class="form-group")
+                        label(for="exampleInputPassword1") Password
+                        input(type="password" class="form-control" id="exampleInputPassword1" name="Password" placeholder="Password")
+                        small(id="passwordHelp", class="form-text text-muted") We'll never share your Password with anyone else.
+                        button(type="submit" class="btn btn-primary") Submit

@@ -1,0 +1,26 @@
+extends ./layout.pug
+block content
+    div.card.p-5.w-50.m-auto
+        div.card-body
+            form(method="POST" action="/signup")
+                div(class="form-group")
+                    label(for="exampleFormControlInput1") Name        
+                    div(class="col")
+                    input(type="text" class="form-control" name="Name" placeholder="Name")
+                
+                    label Phone Number
+                    div(class="col").p-1
+                    input(type="number" class="form-control" name="PhoneNumber" placeholder="Phone Number")
+                
+                div(class="form-group")
+                    label(for="exampleFormControlInput2") Address 
+                    input(type="text" class="form-control" id="userInput" name="Address" placeholder="Address")
+                
+                div(class="form-group")
+                    label(for="exampleFormControlInput2") Username
+                    input(type="username" class="form-control" id="userInput" name="Username" placeholder="Username")
+            
+                div(class="form-group")
+                    label(for="exampleInputPassword1") Password
+                    input(type="password" class="form-control" id="InputPassword" name="Password" placeholder="Password")                
+                button(type="submit" class="btn btn-primary d-block mx-auto my-5") Submit
