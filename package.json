@@ -16,6 +16,7 @@
     "express-session": "^1.17.3",
     "joi": "^17.6.4",
     "joi-image-extension": "^1.0.0",
+    "method-override": "^3.0.0",
     "mongoose": "^6.7.0",
     "nodemon": "^2.0.20",
     "passport": "^0.6.0",

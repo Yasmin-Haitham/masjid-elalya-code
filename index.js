@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const path = require('path');
 const session = require('express-session');
+const methodOverride = require('method-override');
 const cloudinary = require('cloudinary').v2;
 
 require("./config/passport")(passport);
@@ -45,6 +46,7 @@ app.use(passport.session())
 //body parser middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(methodOverride('_method'))
 
 app.use("/",(req,res,next)=>{
     res.locals.user=req.user
