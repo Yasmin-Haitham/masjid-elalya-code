@@ -40,15 +40,12 @@ router.post("/signup",async(req,res)=>{
             Username: body.Username,
             Password: body.Password,
         })
-        //after parsing the body and creating a new user before adding to db password must be encrypted
-        bcrypt.hash(newUser.Password,10,async(err, hash)=>{
-            newUser.Password = hash;
-            console.log(newUser)
+        
             newUser.save().then(() => res.redirect("/login")).catch((e)=>res.status(500).send(e));
-        })
+        }
     }
 
-});
+);
 router.post("/login",(req,res,next)=>{
     console.log("authenticating")
     passport.authenticate("local",{successRedirect: "/",failureRedirect: "/login"})

@@ -14,20 +14,21 @@ module.exports=(passport) =>{
             if user not found (null,false)
             if user found check password if matched (null, user)
             else (null, false)*/
-            const user = await User.findOne({Username}).catch((e)=>done(e));
+            var username1 = req.body.Username
+            var password1 = req.body.Password
+            const user = await User.findOne({username1}).catch((e)=>done(e));
             if (!user){
                 done(null,false);
             }
             else{
-                bcrypt.compare(Password,user.Password,(err,result)=>{
-                    if(result){
+                if(password1==user.Password){
                         done(null,user);
                         console.log(user);}
                     else
                         done(null,false);//(null,false)
-                })
+                }
             }
-        }
+        
     ))
 
     //serialize user
