@@ -1,11 +1,12 @@
 
 extends layout.pug
-block content 
-    div.container.p-3
-        .row.justify-content-end
-            .col-3
-                form(method='GET' action='/activites/addActivity')
-                    input(type='submit' value='Add Activity')
+block content
+    if authority==="1" 
+        div.container.p-3
+            .row.justify-content-end
+                .col-3
+                    form(method='GET' action='/activites/addActivity')
+                        input(type='submit' value='Add Activity')
                     
     div.container.m-auto
         .activites_view.row 

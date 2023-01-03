@@ -5,6 +5,7 @@ const passport = require("passport");
 const joi = require("joi");
 const bcrypt = require("bcrypt");
 
+
 router.get("/",async(req,res)=>{
     res.render("homepage")
 })

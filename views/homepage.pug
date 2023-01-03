@@ -1,21 +1,26 @@
 extends ./layout.pug
 block content
-        div#carouselExampleIndicators.carousel.slide(data-ride='carousel')
-            
-            div.carousel-inner
-                .carousel-item.active
-                    img.d-block.w-100(src='/pexels-oziel-gómez-837274.jpg' alt='First slide')
-                //- .carousel-item
-                //-     img.d-block.w-100(src='/pexels-oziel-gómez-1755383.jpg' alt='Second slide')
-                //- .carousel-item
-                //-     img.d-block.w-100(src='/pexels-pixabay-460680.jpg' alt='Third slide')
-            a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
-                span.carousel-control-prev-icon(aria-hidden='true')
-                span.visually-hidden Previous
-            a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
-                span.carousel-control-next-icon(aria-hidden='true')
-                span.visually-hidden Next
-            .carousel-indicators
-                li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
-                li(data-target='#carouselExampleIndicators' data-slide-to='1')
-                li(data-target='#carouselExampleIndicators' data-slide-to='2')
+        .card.border
+            .card-body
+                .card.img-fluid(style='width:100%')
+                    img.card-img-top(src="pexels-oziel-gómez-837274.jpg" alt='Card image' style='width:100% ')
+                    .card-img-overlay
+                        div(style='background-color: rgba(177, 249, 249, 0.38)').row.align-items.flex-end.text-right
+                            .col
+                                .col
+                                    h4.card-title الصفحه الرسميه لمسجد العليا
+                                .col
+                                    p.card-text 
+                                    |عنوان المسجد:مدينه العبور، الحي السابع، بجوار مدرسة النيل المصريه
+                                    br
+                                    |يمكنك التواصل عبر: 
+                                    a(href="tel:01066009955") اتصل 
+                                    
+                                    a(href="mailto: jassy6700@gmail.com")  البريد الإلكتروني 
+                                    | أو 
+                                    |زياراتنا في الجامع
+                                .col 
+                                    iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3448.7151893601026!2d31.470034799999997!3d30.188128799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14581bb55fc5f3f9%3A0xdf6162418580cfe3!2z2YXYs9is2K8g2KfZhNi52YTZitinINin2YTYrdmKINin2YTYs9in2KjYuQ!5e0!3m2!1sen!2seg!4v1672732276004!5m2!1sen!2seg' width='500' height='350' style='border:1;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade')
+
+                                a.btn.btn-info.mt-3(href='/activites') البحث في الانشطه
+                        
