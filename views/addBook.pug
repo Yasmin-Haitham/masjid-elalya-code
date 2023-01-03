@@ -1,0 +1,33 @@
+extends ./layout.pug
+
+block content 
+    .container.m-auto 
+        //input data only for admin 
+        form(method="POST"  action="/library/addBook")
+            .container.p-3
+                .row.justify-content-center
+                    .col
+                        .col
+                            div(class="form-group")
+                                label(for="exampleInputUsername") Book Name:  
+                                input(type="text" class="form-control" id="exampleInputUsername" name="Name" placeholder="Enter book name")
+                        .col
+                            div(class="form-group")
+                                label(for="description") Description:
+                                textarea(class="form-control" id="exampleInputUsername" name="Description" placeholder="Enter book description" cols="30" rows="10")
+                        .col 
+                            div(class="form-group")
+                                label(for="picURL") pic URL: 
+                                input(type="text" class="form-control" name="picURL" placeholder="Enter book image URL") 
+                        .col 
+                            div(class="form-group")
+                                label(for="bookURL") book URL: 
+                                input(type="text" class="form-control" name="BookURL" placeholder="Enter book URL") 
+
+                        .col
+                            div(class="form-group")
+                                label(for="exampleInputUsername") ISBN:  
+                                input(type="text" class="form-control" id="exampleInputUsername" name="ISBN" placeholder="Enter book ISBN")
+                    
+                        .row.justify-content-end
+                            button(type="submit" class="btn btn-primary") Submit

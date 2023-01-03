@@ -1,0 +1,25 @@
+extends ./layout.pug
+
+block content 
+    .container.m-auto 
+        //input data only for admin 
+        form(method="POST"  action="/activites/addActivity")
+            .container.p-3
+                .row.justify-content-center
+                    .col
+                        .col
+                            div(class="form-group")
+                                label(for="exampleInputUsername") Activity Name:  
+                                input(type="text" class="form-control" id="exampleInputUsername" name="Name" placeholder="Enter actvity name")
+                        .col
+                            div(class="form-group")
+                                label(for="description") Description:
+                                textarea(class="form-control" id="exampleInputUsername" name="Description" placeholder="Enter actvity description" cols="30" rows="10")
+                        
+                        .col
+                            div(class="form-group")
+                                label(for="exampleInputUsername") Price:  
+                                input(type="text" class="form-control" id="exampleInputUsername" name="Price" placeholder="Enter actvity price")
+                    
+                        .row.justify-content-end
+                            button(type="submit" class="btn btn-primary") Submit

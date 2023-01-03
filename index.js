@@ -20,8 +20,8 @@ app.set('view engine', 'pug')
 
 //set router
 const userRouter = require('./routes/user');
-const activitesRouter = require('./routes/activities');
-
+const activitesRouter = require('./routes/activities'); 
+const libraryRouter = require('./routes/library');
 //connect the database
 mongoose.connect(
     process.env.CONNECTION_STRING,
@@ -49,5 +49,5 @@ app.use("/",(req,res,next)=>{
 //routes
 app.use('/',userRouter);
 app.use('/activites',activitesRouter);
-
+app.use('/library',libraryRouter);
 app.listen(port,()=>{console.log(`this server is up and running on: ${port}`)})

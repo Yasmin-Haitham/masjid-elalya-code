@@ -1,0 +1,44 @@
+
+extends layout.pug
+block content
+    if authority==="1" 
+        div.container.p-3
+            .row.justify-content-end
+                .col-3
+                    form(method='GET' action='/library/addbook')
+                        input.btn.btn-primary(type='submit' value='Add book')
+                    
+    div.container.m-auto
+        .library_view.row 
+                each book in books
+                    .col-6
+                        .card.border
+                            img.card-img-top(src='#{book.PicURL}' alt='Card image cap')
+                            .card-body
+                                h3.card-title #{book.Name}
+                                p.card-text 
+                                    |Description: #{book.Description}
+                                    br 
+                                    |ISBN: #{book.ISBN}
+                                    br
+                                    |Book link: 
+                                    a(href="#{book.BookURL}") 
+                                    if authority==="1"
+                                        br
+                                        .col-6
+                                            a(href=`/library/editLibrary/${book._id}` class="btn btn-primary").m-2 Edit
+                                            a(href=`/library/deleteLibrary/${book._id}` class="btn btn-danger ms-2") Delete    
+
+        div.p-3.row.justify-content-center
+                ul.pagination
+                    each page in Array.from(Array(totalPages).keys())
+                        if page + 1 == currentPage
+                            li.page-item.active
+                                a.page-link(href=`/library?page=${page + 1}`) #{page + 1}
+                                //- #{console.log(currentPage)}
+                        else
+                            li.page-item
+                                a.page-link(href=`/library?page=${page + 1}`) #{page + 1}
+
+
+            
