@@ -9,10 +9,15 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
         a.nav-link(href='/')
           | الصفحه الرئيسيه
           span.sr-only (current)
-      li.nav-item
-        a.nav-link(href='/signup') عمل حساب
-      li.nav-item
-        a.nav-link(href='/login') تسجيل دخول
+      if user
+        li.nav-item 
+          a.nav-link(href= '/logout') تسجيل خروج
+      else
+        li.nav-item
+          a.nav-link(href='/signup') عمل حساب
+        li.nav-item
+          a.nav-link(href='/login') تسجيل دخول
+        
       li.nav-item
         a.nav-link(href='/activites') نشاطات
       li.nav-item

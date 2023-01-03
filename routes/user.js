@@ -12,7 +12,8 @@ router.get("/login",(req,res)=>{
     res.render("login")
 })
 router.get("/logout", (req, res) => {
-    req.logOut();
+    res.locals.user = null
+    req.logOut((e)=>{console.error(e)});
     res.redirect("/");
 });
 router.get("/signup",(req,res)=>{
@@ -37,6 +38,7 @@ router.post("/signup",async(req,res)=>{
             Name: body.Name ,
             PhoneNumber: body.PhoneNumber,
             Address: body.Address,
+            AdminFlag: "0",
             Username: body.Username,
             Password: body.Password,
         })
@@ -49,6 +51,7 @@ router.post("/signup",async(req,res)=>{
     }
 
 });
+
 router.post("/login",(req,res,next)=>{
     console.log("authenticating")
     passport.authenticate("local",{successRedirect: "/",failureRedirect: "/login"},

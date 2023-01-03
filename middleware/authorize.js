@@ -3,8 +3,8 @@ const user = require("../schemas/user");
 require("./authenticated")
 function authorize(req, res, next) {
     console.log(req.user);
-    if(authenticate(req, res))
-        if (req.user.AdminFlag === "1") {
+    if(authenticate(req, res,next))
+        if (req.user.AdminFlag == "1") {
             next();
         } else {
             res.send({ error: "You are not authorized to do this action" });

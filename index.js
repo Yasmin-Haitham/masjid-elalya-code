@@ -5,7 +5,7 @@ const passport = require('passport');
 const path = require('path');
 const session = require('express-session');
 const methodOverride = require('method-override');
-const cloudinary = require('cloudinary').v2;
+
 
 require("./config/passport")(passport);
 
@@ -28,15 +28,7 @@ mongoose.connect(
     {},
     () => console.log("Connected to DB")
 );
-if (typeof (process.env.CLOUDINARY_URL) === 'undefined') {
-    console.warn('!! cloudinary config is undefined !!');
-    console.warn('export CLOUDINARY_URL or set dotenv file');
-  } else {
-    console.log('cloudinary config:');
-    console.log(cloudinary.config({
-        secure: true
-      }));
-  }
+
 
 app.use(express.static(path.join(__dirname, 'public')))//to be able to access photos from anywhere
 app.use(session({ secret: "secret", resave: true, saveUninitialized: true }));
